@@ -282,7 +282,7 @@ spec:
     - id: publish-github-gitops
       name: Publish GitOps Repository to Github
       action: publish:github
-      if: ${{ parameters.hostType === 'GitHub' }}
+      if: ${{ parameters.hostType === 'GitHub' and parameters.deployMethod === 'Openshift' }}
       input:
         sourcePath: gitops
         allowedHosts: ['${{ parameters.githubServer }}']
@@ -339,7 +339,7 @@ spec:
       name: PR to Trigger Pipeline Build
       
       action: publish:github:pull-request
-      if: ${{ parameters.hostType === 'GitHub' && parameters.deployMethod === 'Openshift' }}
+      if: ${{ parameters.hostType === 'GitHub' and parameters.deployMethod === 'Openshift' }}
       input:
         repoUrl: ${{ parameters.githubServer }}?owner=${{ parameters.repoOwner }}&repo=${{ parameters.repoName }}
         branchName: trigger-pipeline
@@ -352,7 +352,7 @@ spec:
     - id: trigger_gh_workflow
       name: Trigger GitHub workflow
       action: github:actions:dispatch
-      if: ${{ parameters.hostType === 'GitHub' && parameters.deployMethod === 'Openshift' }}
+      if: ${{ parameters.hostType === 'GitHub' and parameters.deployMethod === 'Openshift' }}
       input:
         repoUrl: ${{ parameters.githubServer }}?owner=${{ parameters.repoOwner }}&repo=${{ parameters.repoName }}
         branchOrTagName: ${{ parameters.branch }}
