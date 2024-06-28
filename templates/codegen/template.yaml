@@ -117,12 +117,12 @@ spec:
           ui:options:
             rows: 5
         deployMethod:
-        title: Deployment Location
-        type: string
-        default: Openshift
-        enum:
-          - Openshift
-          - Podman Desktop (Local)
+          title: Deployment Location
+          type: string
+          default: Openshift
+          enum:
+            - Openshift
+            - Podman Desktop (Local)
       dependencies:
         deployMethod:
           oneOf:
