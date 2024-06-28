@@ -98,7 +98,6 @@ spec:
         - imageOrg
         - imageName
         - deployMethod
-        - namespace
       properties:
         imageRegistry:
           title: Image Registry
