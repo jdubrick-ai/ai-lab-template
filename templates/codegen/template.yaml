@@ -273,6 +273,7 @@ spec:
     - action: fs:rename
       id: renameComponentDir
       name: Rename Component Directory
+      if: ${{ parameters.deployMethod === 'Openshift' }}
       input:
         files:
           - from: gitops/components/http
