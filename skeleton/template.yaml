@@ -121,10 +121,10 @@ spec:
           default: Openshift
           enum:
             - Openshift
-            - Podman Desktop (Local)
+            - Local
       dependencies:
         deployMethod:
-          anyOf:
+          oneOf:
             - properties:
                 deployMethod:
                   enum:
@@ -138,6 +138,10 @@ spec:
                     rows: 5
               required: 
                 - namespace
+            - properties:
+                deployMethod:
+                  enum:
+                    - Local
   # These steps are executed in the scaffolder backend, using data that we gathered
   # via the parameters above.
   steps:
