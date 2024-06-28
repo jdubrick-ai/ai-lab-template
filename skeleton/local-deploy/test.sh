@@ -1,1 +1,3 @@
-echo "script"
+
+echo ${{ values.name }}
+echo ${{ values.image }}
