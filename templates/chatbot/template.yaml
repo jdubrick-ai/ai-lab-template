@@ -124,7 +124,7 @@ spec:
             - Podman Desktop (Local)
       dependencies:
         deployMethod:
-          oneOf:
+          anyOf:
             - properties:
                 deployMethod:
                   enum:
