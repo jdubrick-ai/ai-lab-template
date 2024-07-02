@@ -27,8 +27,8 @@ jobs:
       - name: Build and push container image
         uses: docker/build-push-action@v1.1.0
         with:
-          username: test
-          password: test
+          username: ${{ values.username }}
+          password: ${{ values.password }}
           registry: ${{ values.imageRegistry }}
           repository: ${{ values.imageOrg }}/${{ values.imageName }}
           dockerfile: ./Containerfile
