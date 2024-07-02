@@ -33,7 +33,7 @@ jobs:
         with:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
-          registry: ${{ parameters.imageRegistry }}
-          repository: ${{ parameters.imageOrg }}/${{ parameters.imageName}}
+          registry: ${{ values.imageRegistry }}
+          repository: ${{ values.imageOrg }}/${{ values.imageName }}
           dockerfile: ./Containerfile
           tags: latest
