@@ -142,6 +142,17 @@ spec:
                 deployMethod:
                   enum:
                     - Local
+                imageRepoUsername:
+                  title: Image Repository Username
+                  type: string
+                  ui:field: Secret
+                imageRepoPassword:
+                  title: Image Repository Password
+                  type: string
+                  ui:field: Secret
+              required:
+                - imageRepoUsername
+                - imageRepoPassword
   # These steps are executed in the scaffolder backend, using data that we gathered
   # via the parameters above.
   steps:
@@ -210,8 +221,8 @@ spec:
           imageRegistry: ${{ parameters.imageRegistry }}
           imageOrg: ${{ parameters.imageOrg }}
           imageName: ${{ parameters.imageName }}
-          username: "${{ secrets.USERNAME }}"
-          password: "${{ secrets.PASSWORD }}"
+          username: ${{ secrets.username }}
+          password: ${{ secrets.password }}
     # This action creates a new GitHub repository and publishes the files in the workspace directory to the repository.
     - id: publish-github
       name: Publish Repository to GitHub
