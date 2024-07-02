@@ -194,7 +194,7 @@ spec:
           image: '${{ parameters.imageRegistry }}/${{ parameters.imageOrg }}/${{ parameters.imageName }}'
     - id: fetch-github-action
       name: Fetch GitHub Action
-      action: fetch:plain
+      action: fetch:template
       if: ${{ parameters.hostType === 'GitHub' }}
       input:
         targetPath: source
