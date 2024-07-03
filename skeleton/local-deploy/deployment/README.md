@@ -4,7 +4,7 @@ This document is intended for users who wish to deploy their application locally
 
 ## Prerequisite
 
-You have chosen ${{ values.imageRegistry }} as your desired image registry. Please ensure you are logged in and can read/write images from that repository. For example using `quay.io` you can run this command to prompt the entering of credentials:
+You have chosen `${{ values.imageRegistry }}` as your desired image registry. Please ensure you are logged in and can read/write images from that repository. For example using `quay.io` you can run this command to prompt the entering of credentials:
 ```
 podman login quay.io
 ```
