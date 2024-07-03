@@ -193,6 +193,7 @@ spec:
           imageRegistry: ${{ parameters.imageRegistry }}
           imageOrg: ${{ parameters.imageOrg }}
           imageName: ${{ parameters.imageName }}
+          repoUrl: ${{ parameters.githubServer }}/${{ parameters.repoOwner }}/${{ parameters.repoName }}
     - id: fetch-github-action
       name: Fetch GitHub Action
       action: fetch:plain
