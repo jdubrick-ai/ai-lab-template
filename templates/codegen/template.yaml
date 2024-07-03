@@ -201,8 +201,9 @@ spec:
         url: ../../skeleton/local-deploy
         targetPath: source
         values:
-          name: ${{ parameters.name }}
-          image: '${{ parameters.imageRegistry }}/${{ parameters.imageOrg }}/${{ parameters.imageName }}'
+          imageRegistry: ${{ parameters.imageRegistry }}
+          imageOrg: ${{ parameters.imageOrg }}
+          imageName: ${{ parameters.imageName }}
     - id: fetch-github-action
       name: Fetch GitHub Action
       action: fetch:plain
@@ -210,19 +211,6 @@ spec:
       input:
         targetPath: source
         url: ../../skeleton/github-action
-    - id: fetch-github-action-local
-      name: Fetch GitHub Action Local
-      action: fetch:template
-      if: ${{ parameters.hostType === 'GitHub' and parameters.deployMethod === 'Local' }}
-      input:
-        targetPath: source
-        url: ../../skeleton/github-action-local
-        values:
-          imageRegistry: ${{ parameters.imageRegistry }}
-          imageOrg: ${{ parameters.imageOrg }}
-          imageName: ${{ parameters.imageName }}
-          username: ${{ secrets.username }}
-          password: ${{ secrets.password }}
     # This action creates a new GitHub repository and publishes the files in the workspace directory to the repository.
     - id: publish-github
       name: Publish Repository to GitHub
