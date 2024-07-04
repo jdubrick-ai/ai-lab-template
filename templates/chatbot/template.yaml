@@ -11,7 +11,7 @@ spec:
   # These parameters are used to generate the input form in the frontend, and are
   # used to gather input data for the execution of the template.
   parameters:
-    - title: Application Information
+    - title: Application Information - Test Update
       required:
         - name
         - owner
