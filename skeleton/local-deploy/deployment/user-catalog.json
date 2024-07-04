@@ -4,7 +4,7 @@
       "id": "test-deploy",
       "description" : "This is a test app",
       "name" : "Test Application",
-      "repository": "{{ values.repoUrl }}",
+      "repository": "${{ values.repoUrl }}",
       "icon": "natural-language-processing",
       "categories": [
         "local-development"
