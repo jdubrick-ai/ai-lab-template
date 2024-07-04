@@ -1,8 +1,8 @@
 apiVersion: backstage.io/v1alpha1
 kind: Location
 metadata:
-  name: ai-lab-all 
-  description: AI LAB Samples
+  name: podman-local-all
+  description: AI LAB Samples For Podman Desktop Deployment
 spec:
   targets:
     - ./templates/codegen/template.yaml
