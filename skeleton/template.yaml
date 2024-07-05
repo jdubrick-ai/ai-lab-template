@@ -193,7 +193,6 @@ spec:
           imageRegistry: ${{ parameters.imageRegistry }}
           imageOrg: ${{ parameters.imageOrg }}
           imageName: ${{ parameters.imageName }}
-          repoUrl: ${{ parameters.githubServer }}/${{ parameters.repoOwner }}/${{ parameters.repoName }}
     - id: fetch-local-models
       name: Fetch Model Servers for Local Deployment
       if: ${{ parameters.deployMethod !== 'Openshift' }}
