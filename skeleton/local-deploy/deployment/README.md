@@ -37,7 +37,9 @@ This script requries you to provide the absolute path to your docker/containerfi
 
 ## Deploying To Podman Desktop AI Lab
 
-Deploying via the `AI Lab` extension requires adding the generated `user-catalog.json` file to the Podman Desktops `extensions-storage`. In the [official documentation](https://github.com/containers/podman-desktop-extension-ai-lab?tab=readme-ov-file#-providing-a-custom-catalog) for the extension the default and most common install location is `$HOME/.local/share/containers/podman-desktop/extensions-storage/redhat.ai-lab`. If you altered the location please take note of the path to your `extensions-storage`.
+**Note: Podman Desktop does not require images to be prebuilt before deployment. If the images are missing it will build them locally for you.**
+
+Deploying via the `AI Lab` extension requires adding the generated `user-catalog.json` file to the Podman Desktops `extensions-storage`. In the [official documentation](https://github.com/containers/podman-desktop-extension-ai-lab?tab=readme-ov-file#-providing-a-custom-catalog) for the extension the default and most common install location is `$HOME/.local/share/containers/podman-desktop/extensions-storage/redhat.ai-lab`. If you altered the location please take note of the path to your `extensions-storage`. 
 
 A `deploy.sh` script was generated as part of the template that is designed to assist you in properly setting up your application to run through `Podman Desktop AI Lab`. 
 
