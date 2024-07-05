@@ -189,17 +189,13 @@ spec:
       input:
         url: ../../skeleton/local-deploy
         targetPath: source
+        copyWithoutRender:
+          - model-servers
         values:
           imageRegistry: ${{ parameters.imageRegistry }}
           imageOrg: ${{ parameters.imageOrg }}
           imageName: ${{ parameters.imageName }}
-    - id: fetch-local-models
-      name: Fetch Model Servers for Local Deployment
-      if: ${{ parameters.deployMethod !== 'Openshift' }}
-      action: fetch:plain
-      input:
-        url: ../../skeleton/local-models
-        targetPath: source
+          srcRepoURL: https://${{ parameters.githubServer if parameters.hostType === 'GitHub' else parameters.gitlabServer }}/${{ parameters.repoOwner }}/${{ parameters.repoName }}
     - id: fetch-github-action
       name: Fetch GitHub Action
       action: fetch:plain
