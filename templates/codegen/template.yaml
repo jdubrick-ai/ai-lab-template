@@ -196,6 +196,8 @@ spec:
           imageOrg: ${{ parameters.imageOrg }}
           imageName: ${{ parameters.imageName }}
           srcRepoURL: https://${{ parameters.githubServer if parameters.hostType === 'GitHub' else parameters.gitlabServer }}/${{ parameters.repoOwner }}/${{ parameters.repoName }}
+          name: ${{ parameters.name }}
+          description: Code Generation Application example that generate code in countless programming languages.
     - id: fetch-github-action
       name: Fetch GitHub Action
       action: fetch:plain

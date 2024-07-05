@@ -1,8 +1,8 @@
 {
 	"recipes": [
 	{
-      "id": "test-deploy",
-      "description" : "This is a test app",
+      "id": "${{ values.name }}",
+      "description" : "${{ values.description }}",
       "name" : "Test Application",
       "repository": "${{ values.srcRepoURL }}",
       "icon": "natural-language-processing",
