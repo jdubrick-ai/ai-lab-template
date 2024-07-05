@@ -202,7 +202,8 @@ spec:
         url: ../../skeleton/local-deploy
         targetPath: source
         copyWithoutRender:
-          - model-servers
+          - deployment/model-servers
+          - .assets
         values:
           imageRegistry: ${{ parameters.imageRegistry }}
           imageOrg: ${{ parameters.imageOrg }}
