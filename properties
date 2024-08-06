@@ -7,7 +7,7 @@ export DEFAULT__DEPLOYMENT__NAMESPACE__PREFIX=rhdh
 
 export RHTAP__DEFAULT__NAMESPACE=rhdh
 export ARGOCD__DEFAULT__NAMESPACE=rhdh
-export ARGOCD__DEFAULT__INSTANCE=default
+export ARGOCD__DEFAULT__INSTANCE=argocd-rhdh-cluster
 export ARGOCD__DEFAULT__PROJECT=default
 
 
